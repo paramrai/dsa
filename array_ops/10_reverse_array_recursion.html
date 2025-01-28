@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse arr by recursion</title>
+  </head>
+  <body>
+    <script>
+      let arr = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
+
+      function reverseArr(arr, start, end) {
+        if (start <= end) {
+          [arr[start], arr[end]] = [arr[end], arr[start]];
+          reverseArr(arr, start + 1, end - 1);
+        } else {
+          console.log("array is reversed");
+        }
+      }
+
+      reverseArr(arr, 0, arr.length - 1);
+
+      let str = arr.join(" | ");
+      document.write(str);
+    </script>
+  </body>
+</html>

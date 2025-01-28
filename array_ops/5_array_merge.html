@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Merge</title>
+  </head>
+  <body>
+    <script>
+      let arr = [3, 7, 34, 90, 8];
+      let arr2 = [4, 56, 23, 54, 64, 54];
+
+      // shortest method
+      {
+        let arr3 = arr.concat(arr2);
+        let str = arr3.join(" | ");
+        document.write(str);
+        document.write("<hr/>");
+      }
+
+      // second shortest
+      {
+        let arr3 = [...arr, ...arr2];
+        let str = arr3.join(" | ");
+        document.write(str);
+        document.write("<hr/>");
+      }
+
+      // first method
+      {
+        let arr3 = [];
+        for (let value of arr) {
+          arr3.push(value);
+        }
+
+        for (let value of arr2) {
+          arr3.push(value);
+        }
+        let str = arr3.join(" | ");
+        document.write(str);
+        document.write("<hr/>");
+      }
+
+      // without push
+
+      {
+        let arr3 = [];
+        for (let i = 0; i < arr.length; i++) {
+          arr3[i] = arr[i];
+        }
+
+        for (let i = 0; i < arr2.length; i++) {
+          arr3[arr.length + i] = arr2[i];
+        }
+
+        let str = arr3.join(" | ");
+        document.write(str);
+      }
+    </script>
+  </body>
+</html>
