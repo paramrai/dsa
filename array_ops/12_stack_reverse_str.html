@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack reverse Str</title>
+  </head>
+  <body>
+    <script>
+      let str = "anjna";
+      let arr = str.split("");
+      let reverseStr = "";
+      let currentSize = arr.length;
+
+      function pop(arr) {
+        let lastRemoveChar = arr[currentSize - 1];
+        currentSize--;
+        return lastRemoveChar;
+      }
+
+      for (let i = 0; i < arr.length; i++) {
+        reverseStr += pop(arr);
+      }
+
+      if (str === reverseStr) {
+        console.log("Palimdrome");
+      } else {
+        console.log("Not a Palimdrome");
+      }
+    </script>
+  </body>
+</html>
